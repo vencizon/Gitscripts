@@ -1,0 +1,15 @@
+#!/bin/bash
+
+eval messaggio=\$$#
+
+nfiles=$(( $#-1 ))
+count=0
+
+while [ $count -lt $nfiles ]; do
+	git add $1
+	shift
+	count=$(( count+1 ))
+done
+
+git commit -m "$messaggio"
+git push -u origin master

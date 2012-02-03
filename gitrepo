@@ -1,0 +1,11 @@
+#!/bin/bash
+
+percorso=`pwd`
+repo=${percorso##*/}
+
+touch README
+git init
+git add README
+git commit -m "first commit"
+git remote add origin git@github.com:vencizon/$repo.git
+git push -u origin master
